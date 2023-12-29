@@ -1,0 +1,11 @@
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.Core\bin\Debug\net6.0\TwitterClone.Core.deps.json
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.Core\bin\Debug\net6.0\TwitterClone.Core.dll
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.Core\bin\Debug\net6.0\TwitterClone.Core.pdb
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.Core\obj\Debug\net6.0\TwitterClone.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.Core\obj\Debug\net6.0\TwitterClone.Core.AssemblyInfoInputs.cache
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.Core\obj\Debug\net6.0\TwitterClone.Core.AssemblyInfo.cs
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.Core\obj\Debug\net6.0\TwitterClone.Core.csproj.CoreCompileInputs.cache
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.Core\obj\Debug\net6.0\TwitterClone.Core.dll
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.Core\obj\Debug\net6.0\refint\TwitterClone.Core.dll
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.Core\obj\Debug\net6.0\TwitterClone.Core.pdb
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.Core\obj\Debug\net6.0\ref\TwitterClone.Core.dll

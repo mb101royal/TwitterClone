@@ -1,0 +1,17 @@
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.DatabaseAccessLayer\bin\Debug\net6.0\TwitterClone.DatabaseAccessLayer.deps.json
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.DatabaseAccessLayer\bin\Debug\net6.0\TwitterClone.DatabaseAccessLayer.runtimeconfig.json
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.DatabaseAccessLayer\bin\Debug\net6.0\TwitterClone.DatabaseAccessLayer.dll
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.DatabaseAccessLayer\bin\Debug\net6.0\TwitterClone.DatabaseAccessLayer.pdb
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.DatabaseAccessLayer\obj\Debug\net6.0\TwitterClone.DatabaseAccessLayer.csproj.AssemblyReference.cache
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.DatabaseAccessLayer\obj\Debug\net6.0\TwitterClone.DatabaseAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.DatabaseAccessLayer\obj\Debug\net6.0\TwitterClone.DatabaseAccessLayer.AssemblyInfoInputs.cache
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.DatabaseAccessLayer\obj\Debug\net6.0\TwitterClone.DatabaseAccessLayer.AssemblyInfo.cs
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.DatabaseAccessLayer\obj\Debug\net6.0\TwitterClone.DatabaseAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.DatabaseAccessLayer\obj\Debug\net6.0\TwitterClone.DatabaseAccessLayer.dll
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.DatabaseAccessLayer\obj\Debug\net6.0\refint\TwitterClone.DatabaseAccessLayer.dll
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.DatabaseAccessLayer\obj\Debug\net6.0\TwitterClone.DatabaseAccessLayer.pdb
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.DatabaseAccessLayer\obj\Debug\net6.0\TwitterClone.DatabaseAccessLayer.genruntimeconfig.cache
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.DatabaseAccessLayer\obj\Debug\net6.0\ref\TwitterClone.DatabaseAccessLayer.dll
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.DatabaseAccessLayer\bin\Debug\net6.0\TwitterClone.Core.dll
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.DatabaseAccessLayer\bin\Debug\net6.0\TwitterClone.Core.pdb
+C:\Users\Birinci Novbe\Desktop\TwitterClone\TwitterClone.DatabaseAccessLayer\obj\Debug\net6.0\TwitterClone.DatabaseAccessLayer.csproj.CopyComplete
