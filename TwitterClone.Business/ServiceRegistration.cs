@@ -29,8 +29,6 @@ namespace TwitterClone.Business
 
         public static IServiceCollection AddBusinessLayer(this IServiceCollection services)
         {
-
-            // Continue Here!!:
             services.AddFluentValidation(table => table.RegisterValidatorsFromAssemblyContaining<TopicCreateDtoValidator>());
             return services;
         }

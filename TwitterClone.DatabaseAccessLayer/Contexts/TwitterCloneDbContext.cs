@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ using TwitterClone.DatabaseAccessLayer.Configurations;
 
 namespace TwitterClone.DatabaseAccessLayer.Contexts
 {
-    public class TwitterCloneDbContext : DbContext
+    public class TwitterCloneDbContext : IdentityDbContext<AppUser>
     {
         public TwitterCloneDbContext(DbContextOptions options) : base(options)
         {
@@ -30,8 +31,6 @@ namespace TwitterClone.DatabaseAccessLayer.Contexts
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Topic> Topics { get; set; }
-
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             var entries = ChangeTracker.Entries<BaseEntity>();
@@ -44,5 +43,8 @@ namespace TwitterClone.DatabaseAccessLayer.Contexts
 
             return base.SaveChangesAsync(cancellationToken);
         }
+
+        public DbSet<Topic> Topics { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
     }
 }

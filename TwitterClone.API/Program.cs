@@ -21,6 +21,7 @@ namespace TwitterClone.API
             builder.Services.AddDbContext<TwitterCloneDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddRepositories();
             builder.Services.AddServices();
+            builder.Services.AddBusinessLayer();
 
             var app = builder.Build();
 
