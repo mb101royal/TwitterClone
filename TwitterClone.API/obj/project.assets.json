@@ -136,12 +136,12 @@
         },
         "compile": {
           "ref/netcoreapp3.1/Microsoft.Data.SqlClient.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml;.pdb"
           }
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml;.pdb"
           }
         },
         "runtimeTargets": {
@@ -603,12 +603,12 @@
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml;.pdb"
           }
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml;.pdb"
           }
         }
       },
@@ -680,12 +680,12 @@
         },
         "compile": {
           "lib/net6.0/Swashbuckle.AspNetCore.Swagger.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml;.pdb"
           }
         },
         "runtime": {
           "lib/net6.0/Swashbuckle.AspNetCore.Swagger.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml;.pdb"
           }
         },
         "frameworkReferences": [
@@ -699,12 +699,12 @@
         },
         "compile": {
           "lib/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml;.pdb"
           }
         },
         "runtime": {
           "lib/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml;.pdb"
           }
         }
       },
@@ -712,12 +712,12 @@
         "type": "package",
         "compile": {
           "lib/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml;.pdb"
           }
         },
         "runtime": {
           "lib/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
-            "related": ".pdb;.xml"
+            "related": ".xml;.pdb"
           }
         },
         "frameworkReferences": [
@@ -2780,19 +2780,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Birinci Novbe\\.nuget\\packages\\": {}
+    "C:\\Users\\Royal\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.API\\TwitterClone.API.csproj",
+      "projectUniqueName": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.API\\TwitterClone.API.csproj",
       "projectName": "TwitterClone.API",
-      "projectPath": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.API\\TwitterClone.API.csproj",
-      "packagesPath": "C:\\Users\\Birinci Novbe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.API\\obj\\",
+      "projectPath": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.API\\TwitterClone.API.csproj",
+      "packagesPath": "C:\\Users\\Royal\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Birinci Novbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Royal\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2806,8 +2806,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.Business\\TwitterClone.Business.csproj": {
-              "projectPath": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.Business\\TwitterClone.Business.csproj"
+            "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.Business\\TwitterClone.Business.csproj": {
+              "projectPath": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.Business\\TwitterClone.Business.csproj"
             }
           }
         }
@@ -2860,7 +2860,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

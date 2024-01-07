@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.API\\TwitterClone.API.csproj": {}
+    "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.API\\TwitterClone.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.API\\TwitterClone.API.csproj": {
+    "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.API\\TwitterClone.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.API\\TwitterClone.API.csproj",
+        "projectUniqueName": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.API\\TwitterClone.API.csproj",
         "projectName": "TwitterClone.API",
-        "projectPath": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.API\\TwitterClone.API.csproj",
-        "packagesPath": "C:\\Users\\Birinci Novbe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.API\\obj\\",
+        "projectPath": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.API\\TwitterClone.API.csproj",
+        "packagesPath": "C:\\Users\\Royal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Birinci Novbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Royal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.Business\\TwitterClone.Business.csproj": {
-                "projectPath": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.Business\\TwitterClone.Business.csproj"
+              "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.Business\\TwitterClone.Business.csproj": {
+                "projectPath": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.Business\\TwitterClone.Business.csproj"
               }
             }
           }
@@ -82,21 +82,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.Business\\TwitterClone.Business.csproj": {
+    "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.Business\\TwitterClone.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.Business\\TwitterClone.Business.csproj",
+        "projectUniqueName": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.Business\\TwitterClone.Business.csproj",
         "projectName": "TwitterClone.Business",
-        "projectPath": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.Business\\TwitterClone.Business.csproj",
-        "packagesPath": "C:\\Users\\Birinci Novbe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.Business\\obj\\",
+        "projectPath": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.Business\\TwitterClone.Business.csproj",
+        "packagesPath": "C:\\Users\\Royal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Birinci Novbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Royal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -110,8 +110,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.DatabaseAccessLayer\\TwitterClone.DatabaseAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.DatabaseAccessLayer\\TwitterClone.DatabaseAccessLayer.csproj"
+              "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.DatabaseAccessLayer\\TwitterClone.DatabaseAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.DatabaseAccessLayer\\TwitterClone.DatabaseAccessLayer.csproj"
               }
             }
           }
@@ -147,21 +147,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.Core\\TwitterClone.Core.csproj": {
+    "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.Core\\TwitterClone.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.Core\\TwitterClone.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.Core\\TwitterClone.Core.csproj",
         "projectName": "TwitterClone.Core",
-        "projectPath": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.Core\\TwitterClone.Core.csproj",
-        "packagesPath": "C:\\Users\\Birinci Novbe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.Core\\obj\\",
+        "projectPath": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.Core\\TwitterClone.Core.csproj",
+        "packagesPath": "C:\\Users\\Royal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Birinci Novbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Royal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -208,21 +208,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.DatabaseAccessLayer\\TwitterClone.DatabaseAccessLayer.csproj": {
+    "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.DatabaseAccessLayer\\TwitterClone.DatabaseAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.DatabaseAccessLayer\\TwitterClone.DatabaseAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.DatabaseAccessLayer\\TwitterClone.DatabaseAccessLayer.csproj",
         "projectName": "TwitterClone.DatabaseAccessLayer",
-        "projectPath": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.DatabaseAccessLayer\\TwitterClone.DatabaseAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\Birinci Novbe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.DatabaseAccessLayer\\obj\\",
+        "projectPath": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.DatabaseAccessLayer\\TwitterClone.DatabaseAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\Royal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.DatabaseAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Birinci Novbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Royal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -236,8 +236,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.Core\\TwitterClone.Core.csproj": {
-                "projectPath": "C:\\Users\\Birinci Novbe\\Desktop\\TwitterClone\\TwitterClone.Core\\TwitterClone.Core.csproj"
+              "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.Core\\TwitterClone.Core.csproj": {
+                "projectPath": "C:\\Users\\Royal\\Desktop\\TwitterClone\\TwitterClone.Core\\TwitterClone.Core.csproj"
               }
             }
           }
@@ -287,7 +287,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

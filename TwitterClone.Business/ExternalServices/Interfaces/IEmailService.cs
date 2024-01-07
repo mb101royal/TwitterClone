@@ -8,6 +8,6 @@ namespace TwitterClone.Business.ExternalServices.Interfaces
 {
     public interface IEmailService
     {
-        public Task SendEmail(string email);
+        public void SendEmail(string to, string header, string body, bool isHtml = true);
     }
 }

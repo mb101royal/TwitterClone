@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using TwitterClone.DatabaseAccessLayer.Contexts;
 using TwitterClone.Business;
+using TwitterClone.Business.ExternalServices.Interfaces;
+using TwitterClone.Business.ExternalServices.Implements;
 
 namespace TwitterClone.API
 {
@@ -22,6 +24,7 @@ namespace TwitterClone.API
             builder.Services.AddRepositories();
             builder.Services.AddServices();
             builder.Services.AddBusinessLayer();
+            builder.Services.AddScoped<IEmailService, EmailService>();
 
             var app = builder.Build();
 
