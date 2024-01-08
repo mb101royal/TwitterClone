@@ -24,7 +24,7 @@ namespace TwitterClone.API
             builder.Services.AddRepositories();
             builder.Services.AddServices();
             builder.Services.AddBusinessLayer();
-            builder.Services.AddScoped<IEmailService, EmailService>();
+            builder.Services.AddUserIdentity();
 
             var app = builder.Build();
 

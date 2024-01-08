@@ -9,8 +9,7 @@ namespace TwitterClone.Core.Entities
 {
     public class AppUser : IdentityUser
     {
-        public int Name { get; set; }
-        public int Surname { get; set; }
+        public string Fullname { get; set; }
         public DateTime BirthDate { get; set; }
     }
 }

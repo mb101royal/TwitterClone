@@ -23,8 +23,7 @@ namespace TwitterClone.Business.Services.Implements
         {
             await _repo.CreateAsync(new Topic
             {
-                Name = dto.Name,
-
+                Name = dto.Name
             });
             await _repo.SaveAsync();
         }
@@ -33,7 +32,7 @@ namespace TwitterClone.Business.Services.Implements
             => _repo.GetAll().Select(table => new TopicDetailsDto
             {
                 Id = table.Id,
-                Name = table.Name,
+                Name = table.Name
             });
 
         public Task<TopicDetailDto> GetByIdAsync(int id)

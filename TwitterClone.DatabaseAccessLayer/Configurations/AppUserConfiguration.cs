@@ -13,9 +13,12 @@ namespace TwitterClone.DatabaseAccessLayer.Configurations
     {
         public void Configure(EntityTypeBuilder<AppUser> builder)
         {
-            builder.Property(table => table.Name)
-                /*.IsRequired()
-                .HasMaxLength(32)*/;
+            builder.Property(b => b.Fullname)
+                .IsRequired()
+                .HasMaxLength(64);
+            builder.Property(b => b.BirthDate)
+                .IsRequired()
+                .HasColumnType("date");
         }
-}
+    }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using TwitterClone.DatabaseAccessLayer.Configurations;
 
 namespace TwitterClone.DatabaseAccessLayer.Contexts
 {
-    public class TwitterCloneDbContext : IdentityDbContext<AppUser>
+    public class TwitterCloneDbContext : IdentityDbContext
     {
         public TwitterCloneDbContext(DbContextOptions options) : base(options)
         {
@@ -28,6 +29,10 @@ namespace TwitterClone.DatabaseAccessLayer.Contexts
             // Another variant:
             /* modelBuilder.ApplyConfigurationsFromAssembly(typeof(TopicConfiguration).Assembly); */
 
+            modelBuilder.Entity<IdentityUser>()
+                .Ignore(b => b.PhoneNumber)
+                .Ignore(b => b.PhoneNumberConfirmed);
+            
             base.OnModelCreating(modelBuilder);
         }
 
