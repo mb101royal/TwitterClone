@@ -10,16 +10,27 @@ namespace TwitterClone.API.Controllers
     public class AuthController : ControllerBase
     {
         IUserService _userService { get; }
+        IAuthService _authService { get; }
 
-        public AuthController(IUserService userService)
+        public AuthController(IUserService userService, IAuthService authService)
         {
             _userService = userService;
+            _authService = authService;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateUser(RegisterDto dto)
+        [HttpPost("Login")]
+        public async Task<IActionResult> Post(LoginDto dto)
+        {
+            var login = await _authService.Login(dto);
+
+            return Ok(login);
+        }
+
+        [HttpPost("Register")]
+        public async Task<IActionResult> Post(RegisterDto dto)
         {
             await _userService.CreateAsync(dto);
+
             return Ok();
         }
     }

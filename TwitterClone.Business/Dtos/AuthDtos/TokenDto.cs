@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TwitterClone.Business.Dtos.AuthDtos
 {
-    public class LoginDto
+    public class TokenDto
     {
-        public string UsernameOrEmail { get; set; }
-        public string Password { get; set; }
+        public string Token { get; set; }
+        public DateTime Expires { get; set; }
     }
 }

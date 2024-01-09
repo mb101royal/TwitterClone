@@ -1,11 +1,5 @@
 ﻿using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TwitterClone.Business.Dtos.TopicDtos;
 using TwitterClone.Business.DtoValidators.TopicDtoValidators;
 using TwitterClone.Business.ExternalServices.Implements;
 using TwitterClone.Business.ExternalServices.Interfaces;
@@ -30,6 +24,8 @@ namespace TwitterClone.Business
             services.AddScoped<ITopicService, TopicService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<ITokenService, TokenService>();
 
             return services;
         }

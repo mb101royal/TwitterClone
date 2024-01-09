@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using TwitterClone.Business.Dtos.TopicDtos;
@@ -10,6 +11,7 @@ namespace TwitterClone.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class TopicsController : ControllerBase
     {
         ITopicService _service { get; }
@@ -25,7 +27,13 @@ namespace TwitterClone.API.Controllers
             return Ok(_service.GetAll());
         }
 
-        [HttpPost]
+        [HttpGet("TopicById/{id}")]
+        public IActionResult Get(int id)
+        {
+            return Ok(_service.GetByIdAsync(id));
+        }
+
+        [HttpPost("CreateTopic")]
         public async Task<IActionResult> Post(TopicCreateDto dto)
         {
             await _service.CreateAsync(dto);

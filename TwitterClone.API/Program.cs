@@ -3,6 +3,8 @@ using TwitterClone.DatabaseAccessLayer.Contexts;
 using TwitterClone.Business;
 using TwitterClone.Business.ExternalServices.Interfaces;
 using TwitterClone.Business.ExternalServices.Implements;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.OpenApi.Models;
 
 namespace TwitterClone.API
 {
@@ -17,14 +19,52 @@ namespace TwitterClone.API
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "MyAPI", Version = "v1" });
 
-            // Custom Services
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Description = "Please enter token",
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    BearerFormat = "JWT",
+                    Scheme = "bearer"
+                });
+
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type=ReferenceType.SecurityScheme,
+                                Id="Bearer"
+                            }
+                        },
+                        new string[]{}
+                    }
+                });
+            });
+
+            // Custom settings
+            var jwt = builder.Configuration.GetSection("Jwt").Get<Jwt>();
+
+            // Database Context
             builder.Services.AddDbContext<TwitterCloneDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            // Business Service Registration
             builder.Services.AddRepositories();
             builder.Services.AddServices();
             builder.Services.AddBusinessLayer();
+
+            // Api Service Registration
             builder.Services.AddUserIdentity();
+
+            // Auth
+            builder.Services.AddAuth(jwt);
 
             var app = builder.Build();
 
@@ -32,11 +72,13 @@ namespace TwitterClone.API
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwaggerUI(c =>
+                {
+                    c.ConfigObject.AdditionalItems.Add("persistAuthorization", "true");
+                });
             }
-
+            app.UseAuthentication();
             app.UseAuthorization();
-
 
             app.MapControllers();
 
