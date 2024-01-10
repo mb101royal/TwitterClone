@@ -4,6 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using TwitterClone.Business.Dtos.AuthDtos;
+using TwitterClone.Business.Dtos.TokenDtos;
 using TwitterClone.Business.Exceptions.Auth;
 using TwitterClone.Business.ExternalServices.Interfaces;
 using TwitterClone.Business.Services.Interfaces;
@@ -37,7 +38,15 @@ namespace TwitterClone.Business.Services.Implements
 
             if (!result) throw new IncorrectUsernameOrPasswordException();
 
-            return _tokenService.CreateToken(user);
+            string role = (await _userManager.GetRolesAsync(user)).First();
+
+            TokenParamsDto tokenParamsDto = new()
+            {
+                Role = role,
+                User = user
+            };
+
+            return _tokenService.CreateToken(tokenParamsDto);
         }
     }
 }

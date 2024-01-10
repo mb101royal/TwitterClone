@@ -5,13 +5,13 @@ using System.Net;
 using TwitterClone.Business.Dtos.TopicDtos;
 using TwitterClone.Business.Repositories.Interfaces;
 using TwitterClone.Business.Services.Interfaces;
+using TwitterClone.Core;
 using TwitterClone.DatabaseAccessLayer.Contexts;
 
 namespace TwitterClone.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class TopicsController : ControllerBase
     {
         ITopicService _service { get; }
@@ -21,18 +21,21 @@ namespace TwitterClone.API.Controllers
             _service = service;
         }
 
+        [Authorize]
         [HttpGet("AllTopics")]
         public IActionResult Get()
         {
             return Ok(_service.GetAll());
         }
 
+        [Authorize]
         [HttpGet("TopicById/{id}")]
         public IActionResult Get(int id)
         {
             return Ok(_service.GetByIdAsync(id));
         }
 
+        [Authorize(Roles = nameof(Roles.Admin))]
         [HttpPost("CreateTopic")]
         public async Task<IActionResult> Post(TopicCreateDto dto)
         {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using TwitterClone.Business.Dtos.AuthDtos;
+using TwitterClone.Business.Dtos.TokenDtos;
 using TwitterClone.Business.ExternalServices.Interfaces;
 using TwitterClone.Core.Entities;
 
@@ -22,12 +22,14 @@ namespace TwitterClone.Business.ExternalServices.Implements
             _config = configuration;
         }
 
-        public TokenDto CreateToken(AppUser user)
+        public TokenDto CreateToken(TokenParamsDto dto)
         {
             List<Claim> claims = new()
             {
-                new Claim(ClaimTypes.Name, user.UserName),
-                new Claim(ClaimTypes.GivenName, user.Fullname)
+                new Claim(ClaimTypes.NameIdentifier, dto.User.Id),
+                new Claim(ClaimTypes.GivenName, dto.User.Fullname),
+                new Claim(ClaimTypes.Name, dto.User.UserName),
+                new Claim(ClaimTypes.Role, dto.Role)
             };
 
             SymmetricSecurityKey key = new(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));

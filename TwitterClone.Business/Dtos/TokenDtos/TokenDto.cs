@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TwitterClone.Business.Dtos.AuthDtos
+namespace TwitterClone.Business.Dtos.TokenDtos
 {
     public class TokenDto
     {

@@ -51,5 +51,6 @@ namespace TwitterClone.DatabaseAccessLayer.Contexts
 
         public DbSet<Topic> Topics { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
     }
 }

@@ -5,6 +5,15 @@ using TwitterClone.Business.ExternalServices.Interfaces;
 using TwitterClone.Business.ExternalServices.Implements;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Identity;
+using TwitterClone.Core.Entities;
+using TwitterClone.Core;
+using System.Text;
+using System.Data;
+using System.IO;
+using TwitterClone.Business.Exceptions.Role;
+using TwitterClone.Business.Exceptions.AppUser;
+using TwitterClone.API.Helpers;
 
 namespace TwitterClone.API
 {
@@ -66,17 +75,23 @@ namespace TwitterClone.API
             // Auth
             builder.Services.AddAuth(jwt);
 
+            // Http Context Accessor
+            builder.Services.AddHttpContextAccessor();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
+                app.UseSeedData();
+
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
                     c.ConfigObject.AdditionalItems.Add("persistAuthorization", "true");
                 });
             }
+
             app.UseAuthentication();
             app.UseAuthorization();
 

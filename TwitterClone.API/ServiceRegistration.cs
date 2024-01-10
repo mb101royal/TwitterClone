@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using TwitterClone.Core.Entities;
 using TwitterClone.DatabaseAccessLayer.Contexts;
 
@@ -7,9 +9,9 @@ namespace TwitterClone.API
 {
     public class Jwt
     {
-        public string? Issuer { get; set; }
-        public string? Audience { get; set; }
-        public string? Key { get; set; }
+        public string Issuer { get; set; }
+        public string Audience { get; set; }
+        public string Key { get; set; }
     }
 
     public static class ServiceRegistration
@@ -26,24 +28,24 @@ namespace TwitterClone.API
 
         public static IServiceCollection AddAuth(this IServiceCollection services, Jwt jwt)
         {
-            services.AddAuthentication(
-                options =>
+            services.AddAuthentication(options =>
                 {
                     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
                     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
                 })
-                .AddJwtBearer(
-                options =>
+                .AddJwtBearer(options =>
                 {
                     options.TokenValidationParameters = new()
                     {
                         ValidateIssuer = true,
                         ValidateAudience = true,
+                        ValidateIssuerSigningKey = true,
                         ValidateLifetime = true,
 
                         ValidIssuer = jwt.Issuer,
                         ValidAudience = jwt.Audience,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwt.Key)),
                         LifetimeValidator = (active, expires, token, _) =>
                         token != null && expires > DateTime.UtcNow && active < DateTime.UtcNow
                     };
