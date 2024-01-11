@@ -1,11 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Server.IIS.Core;
+using TwitterClone.Business.Dtos.BlogDtos;
 using TwitterClone.Business.Dtos.TopicDtos;
-using TwitterClone.Business.Exceptions.Topic;
+using TwitterClone.Business.Exceptions.Common;
 using TwitterClone.Business.Repositories.Interfaces;
 using TwitterClone.Business.Services.Interfaces;
 using TwitterClone.Core.Entities;
@@ -14,50 +11,82 @@ namespace TwitterClone.Business.Services.Implements
 {
     public class TopicService : ITopicService
     {
-        readonly ITopicRepository _repo;
+        ITopicRepository _topicRepo { get; }
+        IMapper _mapper { get; }
 
-        public TopicService(ITopicRepository repo)
+        public TopicService(ITopicRepository repo, IMapper mapper)
         {
-            _repo = repo;
+            _topicRepo = repo;
+            _mapper = mapper;
         }
 
         public async Task CreateAsync(TopicCreateDto dto)
         {
-            await _repo.CreateAsync(new Topic
-            {
-                Name = dto.Name
-            });
-            await _repo.SaveAsync();
+
+
+            var newTopic = _mapper.Map<Topic>(dto);
+
+            await _topicRepo.CreateAsync(newTopic);
+
+            await _topicRepo.SaveAsync();
         }
 
-        public IQueryable<TopicDetailsDto> GetAll()
-            => _repo.GetAll().Select(table => new TopicDetailsDto
-            {
-                Id = table.Id,
-                Name = table.Name
-            });
+        public async Task Update(int id, TopicUpdateDto dto)
+        {
+            _checkId(id);
 
-        public Task<TopicDetailDto> GetByIdAsync(int id)
+            _mapper.Map<Topic>(dto);
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            _checkId(id);
+
+            var topicFromRepo = await _topicRepo.Table.FindAsync(id) ?? throw new NotFoundException<Topic>();
+
+            _topicRepo.Table.Remove(topicFromRepo);
+
+            await _topicRepo.SaveAsync();
+        }
+
+        public IEnumerable<TopicDetailsDto> GetAll()
+        {
+            var topicFromRepo = _topicRepo.GetAll().Where(t => t.IsDeleted == false);
+
+            var mappedTopicFromRepo = _mapper.Map<IEnumerable<TopicDetailsDto>>(topicFromRepo);
+
+            return mappedTopicFromRepo;
+        }
+
+        public async Task<TopicDetailedDto> GetDetailedAsync(int id)
+        {
+            _checkId(id);
+
+            var topicFromRepo = await _topicRepo.Table.FindAsync(id) ?? throw new NotFoundException<Topic>();
+
+            var mappedTopicDetailedDto = _mapper.Map<TopicDetailedDto>(topicFromRepo);
+
+            // Another variant
+            // TopicDetailedDto topicDetailedDto = new() {assigning props...}
+
+            // var mappedTopicDetailedDto = _mapper.Map(topicFromRepo, topicDetailedDto);
+
+            return mappedTopicDetailedDto;
+        }
+
+        public Task SoftDeleteAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        /*public async Task<TopicDetailDto> GetByIdAsync(int id)
+        public Task SoftDeleteRevertAsync(int id)
         {
-            var result = await _repo.Table.AnyAsync(i => i.Id == id);
+            throw new NotImplementedException();
+        }
 
-            if (!result) throw new TopicNotFoundException();
-
-            var topicFromRepo = _repo.Table.Select(t =>
-            {
-                
-            });
-
-            return (new TopicDetailDto
-            {
-                Id = topicFromRepo.Id, CreateDate = topicFromRepo.CreateDate,
-
-            });
-        }*/
+        void _checkId(int id)
+        {
+            if (id < 1) throw new Exception("Invalid id value.");
+        }
     }
 }

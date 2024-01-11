@@ -16,12 +16,18 @@ namespace TwitterClone.API.Controllers
             _blogService = blogService;
         }
 
-        [HttpPost("Create")]
+        [HttpGet("GetAll")]
+        public async Task<IActionResult> Get(BlogDetailsDto dto)
+        {
+            return Ok();
+        }
+
+        /*[HttpPost("Create")]
         public async Task<IActionResult> Post(BlogCreateDto dto)
         {
             await _blogService.Create(dto);
 
             return Ok();
-        }
+        }*/
     }
 }

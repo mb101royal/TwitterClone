@@ -22,21 +22,21 @@ namespace TwitterClone.API.Controllers
         }
 
         [Authorize]
-        [HttpGet("AllTopics")]
+        [HttpGet("GetAll")]
         public IActionResult Get()
         {
             return Ok(_service.GetAll());
         }
 
         [Authorize]
-        [HttpGet("TopicById/{id}")]
+        [HttpGet("GetById/{id}")]
         public IActionResult Get(int id)
         {
             return Ok(_service.GetByIdAsync(id));
         }
 
         [Authorize(Roles = nameof(Roles.Admin))]
-        [HttpPost("CreateTopic")]
+        [HttpPost("Create")]
         public async Task<IActionResult> Post(TopicCreateDto dto)
         {
             await _service.CreateAsync(dto);

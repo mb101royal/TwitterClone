@@ -8,5 +8,7 @@ namespace TwitterClone.Business.Dtos.BlogDtos
 {
     public class BlogDetailsDto
     {
+        public int Id { get; set; }
+        public string Content { get; set; }
     }
 }

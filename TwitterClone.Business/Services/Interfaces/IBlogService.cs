@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TwitterClone.Business.Dtos.BlogDtos;
+﻿using TwitterClone.Business.Dtos.BlogDtos;
 
 namespace TwitterClone.Business.Services.Interfaces
 {
     public interface IBlogService
     {
-        Task Create(BlogCreateDto dto);
+        public IEnumerable<BlogDetailsDto> GetAll();
+        public Task<BlogDetailedDto> GetDetailedAsync(int id);
+        public Task CreateAsync(BlogCreateDto dto);
+        public Task Update(int id, BlogUpdateDto dto);
+        public Task DeleteAsync(int id);
+        public Task SoftDeleteAsync(int id);
+        public Task SoftDeleteRevertAsync(int id);
+
     }
 }

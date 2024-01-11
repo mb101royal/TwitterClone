@@ -9,7 +9,7 @@ using TwitterClone.Core.Entities;
 
 namespace TwitterClone.DatabaseAccessLayer.Configurations
 {
-    public class PostConfiguration : IEntityTypeConfiguration<Blog>
+    public class BlogConfiguration : IEntityTypeConfiguration<Blog>
     {
         public void Configure(EntityTypeBuilder<Blog> builder)
         {
