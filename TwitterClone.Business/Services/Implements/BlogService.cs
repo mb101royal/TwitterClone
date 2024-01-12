@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using TwitterClone.Business.Dtos.BlogDtos;
-using TwitterClone.Business.Dtos.TopicDtos;
 using TwitterClone.Business.Exceptions.Common;
 using TwitterClone.Business.Repositories.Interfaces;
 using TwitterClone.Business.Services.Interfaces;
@@ -34,6 +33,7 @@ namespace TwitterClone.Business.Services.Implements
         public async Task Create(BlogCreateDto dto)
         {
             var newBlog = _mapper.Map<Blog>(dto);
+            newBlog.AppUserId = userId;
 
             await _blogRepo.CreateAsync(newBlog);
 
@@ -58,15 +58,15 @@ namespace TwitterClone.Business.Services.Implements
             return mappedBlogFromRepo;
         }
 
-        public async Task<BlogDetailedDto> GetDetailedAsync(int id)
+        public BlogDetailedDto GetDetailed(int id)
         {
             _checkId(id);
 
-            var blogFromRepo = await _blogRepo.Table.FindAsync(id) ?? throw new NotFoundException<Topic>();
+            var blogFromRepo = _blogRepo.GetDetailed(id) ?? throw new NotFoundException<Blog>();
 
-            var mappedTopicDetailedDto = _mapper.Map<BlogDetailedDto>(blogFromRepo);
+            var mappedBlogDetailedDto = _mapper.Map<BlogDetailedDto>(blogFromRepo);
 
-            return mappedTopicDetailedDto;
+            return mappedBlogDetailedDto;
         }
 
         public async Task CreateAsync(BlogCreateDto dto)
@@ -74,25 +74,25 @@ namespace TwitterClone.Business.Services.Implements
             var newBlog= _mapper.Map<Blog>(dto);
 
             await _blogRepo.CreateAsync(newBlog);
-
             await _blogRepo.SaveAsync();
         }
 
-        public async Task UpdateAsync(int id, TopicUpdateDto dto)
+        public async Task UpdateAsync(int id, BlogUpdateDto dto)
         {
             _checkId(id);
 
-            _mapper.Map<Topic>(dto);
+            _mapper.Map<Blog>(dto);
+
+
         }
 
         public async Task DeleteAsync(int id)
         {
             _checkId(id);
 
-            var blogFromRepo = await _blogRepo.Table.FindAsync(id) ?? throw new NotFoundException<Topic>();
+            var blogFromRepo = await _blogRepo.Table.FindAsync(id) ?? throw new NotFoundException<Blog>();
 
             _blogRepo.Table.Remove(blogFromRepo);
-
             await _blogRepo.SaveAsync();
         }
 
@@ -111,7 +111,6 @@ namespace TwitterClone.Business.Services.Implements
         {
 
         }
-
 
         void _checkId(int id)
         {

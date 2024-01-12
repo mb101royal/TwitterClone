@@ -11,6 +11,7 @@ namespace TwitterClone.Core.Entities
     {
         public string Fullname { get; set; }
         public DateTime BirthDate { get; set; }
-        public IEnumerable<Blog> Blogs { get; set; }
+        public IEnumerable<Blog>? Blogs { get; set; }
+        public IEnumerable<Comment>? Comments {  get; set; }
     }
 }

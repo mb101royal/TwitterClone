@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using TwitterClone.Business.Dtos.TopicDtos;
 using TwitterClone.Business.Repositories.Interfaces;
+using TwitterClone.Business.Services.Implements;
 using TwitterClone.Business.Services.Interfaces;
 using TwitterClone.Core;
 using TwitterClone.DatabaseAccessLayer.Contexts;
@@ -14,33 +15,46 @@ namespace TwitterClone.API.Controllers
     [ApiController]
     public class TopicsController : ControllerBase
     {
-        ITopicService _service { get; }
+        ITopicService _topicService { get; }
 
         public TopicsController(ITopicService service)
         {
-            _service = service;
+            _topicService = service;
         }
 
-        [Authorize]
-        [HttpGet("GetAll")]
+        [HttpGet("All")]
         public IActionResult Get()
         {
-            return Ok(_service.GetAll());
+            var topics = _topicService.GetAll();
+
+            return Ok(topics);
         }
 
         [Authorize]
         [HttpGet("GetById/{id}")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return Ok(_service.GetByIdAsync(id));
+            var specificTopic = await _topicService.GetDetailedAsync(id);
+
+            return Ok(specificTopic);
         }
 
-        [Authorize(Roles = nameof(Roles.Admin))]
+        [Authorize]
         [HttpPost("Create")]
         public async Task<IActionResult> Post(TopicCreateDto dto)
         {
-            await _service.CreateAsync(dto);
-            return StatusCode(StatusCodes.Status201Created);
+            await _topicService.CreateAsync(dto);
+
+            return Ok();
+        }
+
+        [Authorize]
+        [HttpDelete("Delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _topicService.DeleteAsync(id);
+
+            return Ok();
         }
     }
 }

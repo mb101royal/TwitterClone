@@ -12,8 +12,8 @@ namespace TwitterClone.Business.Repositories.Interfaces
     public interface IGenericRepository<T> where T : BaseEntity
     {
         DbSet<T> Table { get; }
-        IQueryable<T> GetAll(bool IsTracking = false);
-        IQueryable<T> GetByIdAsync(int id, bool IsTracking = false);
+        IQueryable<T> GetAll(bool isTracking = false);
+        IQueryable<T> GetDetailed(int id, bool isTracking = false);
         Task<bool> IsExistAsync(Expression<Func<T, bool>> expression);
         Task CreateAsync(T data);
         Task SaveAsync();

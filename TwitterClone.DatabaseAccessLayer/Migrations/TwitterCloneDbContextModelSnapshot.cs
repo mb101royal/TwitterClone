@@ -243,7 +243,7 @@ namespace TwitterClone.DatabaseAccessLayer.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime?>("LastUpdateTime")
+                    b.Property<DateTime?>("LastUpdated")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("TimesUpdated")
@@ -256,6 +256,46 @@ namespace TwitterClone.DatabaseAccessLayer.Migrations
                     b.HasIndex("AppUserId");
 
                     b.ToTable("Blogs");
+                });
+
+            modelBuilder.Entity("TwitterClone.Core.Entities.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AppUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("BlogId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<int?>("ParentCommentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("BlogId");
+
+                    b.HasIndex("ParentCommentId");
+
+                    b.ToTable("Comment");
                 });
 
             modelBuilder.Entity("TwitterClone.Core.Entities.Topic", b =>
@@ -359,9 +399,47 @@ namespace TwitterClone.DatabaseAccessLayer.Migrations
                     b.Navigation("AppUser");
                 });
 
+            modelBuilder.Entity("TwitterClone.Core.Entities.Comment", b =>
+                {
+                    b.HasOne("TwitterClone.Core.Entities.AppUser", "AppUser")
+                        .WithMany("Comments")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TwitterClone.Core.Entities.Blog", "Blog")
+                        .WithMany("Comments")
+                        .HasForeignKey("BlogId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("TwitterClone.Core.Entities.Comment", "ParentComment")
+                        .WithMany("Comments")
+                        .HasForeignKey("ParentCommentId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Blog");
+
+                    b.Navigation("ParentComment");
+                });
+
+            modelBuilder.Entity("TwitterClone.Core.Entities.Blog", b =>
+                {
+                    b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("TwitterClone.Core.Entities.Comment", b =>
+                {
+                    b.Navigation("Comments");
+                });
+
             modelBuilder.Entity("TwitterClone.Core.Entities.AppUser", b =>
                 {
                     b.Navigation("Blogs");
+
+                    b.Navigation("Comments");
                 });
 #pragma warning restore 612, 618
         }

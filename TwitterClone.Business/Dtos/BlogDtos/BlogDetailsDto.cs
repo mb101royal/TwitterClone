@@ -10,5 +10,7 @@ namespace TwitterClone.Business.Dtos.BlogDtos
     {
         public int Id { get; set; }
         public string Content { get; set; }
+        public DateTime CreatedTime { get; set; }
+        public DateTime? LastUpdated { get; set; }
     }
 }

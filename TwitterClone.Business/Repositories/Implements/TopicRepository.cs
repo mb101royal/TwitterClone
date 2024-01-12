@@ -9,7 +9,7 @@ using TwitterClone.DatabaseAccessLayer.Contexts;
 
 namespace TwitterClone.Business.Repositories.Implements
 {
-    internal class TopicRepository : GenericRepository<Topic>, ITopicRepository
+    public class TopicRepository : GenericRepository<Topic>, ITopicRepository
     {
         public TopicRepository(TwitterCloneDbContext context) : base(context)
         {

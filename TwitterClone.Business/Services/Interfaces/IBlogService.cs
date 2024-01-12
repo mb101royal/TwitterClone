@@ -5,7 +5,7 @@ namespace TwitterClone.Business.Services.Interfaces
     public interface IBlogService
     {
         public IEnumerable<BlogDetailsDto> GetAll();
-        public Task<BlogDetailedDto> GetDetailedAsync(int id);
+        public BlogDetailedDto GetDetailed(int id);
         public Task CreateAsync(BlogCreateDto dto);
         public Task Update(int id, BlogUpdateDto dto);
         public Task DeleteAsync(int id);

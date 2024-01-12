@@ -17,6 +17,8 @@ namespace TwitterClone.Business
         {
             services.AddScoped<ITopicRepository, TopicRepository>();
             services.AddScoped<IBlogRepository, BlogRepository>();
+            services.AddScoped<IBlogRepository, BlogRepository>();
+            services.AddScoped<ICommentRepository, CommentRepository>();
 
             return services;
         }
@@ -27,8 +29,9 @@ namespace TwitterClone.Business
             services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<ITokenService, TokenService>();
-            services.AddScoped<ITopicService, TopicService>();
+            services.AddScoped<ITopicService, TopicService>();   
             services.AddScoped<IBlogService, BlogService>();
+            services.AddScoped<ICommentService, CommentService>();
 
             return services;
         }

@@ -21,6 +21,10 @@ namespace TwitterClone.DatabaseAccessLayer.Configurations
             builder.HasOne(t => t.AppUser)
                 .WithMany(t => t.Blogs)
                 .HasForeignKey(t => t.AppUserId);
+            builder.HasMany(t => t.Comments)
+                .WithOne(t => t.Blog)
+                .HasForeignKey(t => t.BlogId)
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

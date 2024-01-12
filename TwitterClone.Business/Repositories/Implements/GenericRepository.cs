@@ -22,8 +22,8 @@ namespace TwitterClone.Business.Repositories.Implements
 
         public DbSet<T> Table => _context.Set<T>();
 
-        public IQueryable<T> GetAll(bool IsTracking = true)
-            => IsTracking ? Table.AsNoTracking() : Table;
+        public IQueryable<T> GetAll(bool isTracking = true)
+            => isTracking ? Table.AsNoTracking() : Table;
 
         public async Task<bool> IsExistAsync(Expression<Func<T, bool>> expression)
         {
@@ -42,5 +42,8 @@ namespace TwitterClone.Business.Repositories.Implements
         {
             await _context.SaveChangesAsync();
         }
+
+        public IQueryable<T> GetDetailed(int id, bool isTracking = true)
+            => isTracking ? Table.AsNoTracking().Where(t => t.Id == id) : Table.Where(t => t.Id == id);
     }
 }
